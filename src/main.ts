@@ -40,6 +40,7 @@ async function bootstrap() {
   });
 
   await app.listen(config.get('PORT'), () => {
+    console.log(`App started on port ${config.get('PORT')}`)
     console.log(JSON.stringify(config.list()));
   });
 }
