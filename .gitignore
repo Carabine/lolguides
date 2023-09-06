@@ -5,6 +5,9 @@
 # storage
 /public/storage
 
+# DB
+lolguides.db
+
 # Logs
 logs
 *.log
