@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Гайд по чемпиону Сайлас - League of legends</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<%= url %>/public/static/css/reset.css">
+    <link rel="stylesheet" href="<%= url %>/public/static/css/index.css">
+</head>
+<body>
+<div class="tooltip-wrapper" id="skill-order-item1" style="display:none">
+    <div class="tooltip">
+        <div class="tooltip-header">
+            <img src="images/chain-lash.webp" /> <span class="tooltip-title">Удар цепями</span>
+        </div>
+        <div class="tooltip-body">
+            <div class="tooltip-info">Перезарядка: 11/10/9/8/7</div>
+            <div class="tooltip-description">
+                Сайлас бьет цепями по земле, перекрещивая их в выбранной точке. Все враги, попавшие в крестообразную зону
+                поражения, получают магический урон и замедляются на 1.5 секунды.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="header">
+
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="content-header">
+                <div class="content-header-title">
+                    <h1>Гайд по чемпиону Сайлас</h1>
+                    <h2>Роли: Средняя линия</h2>
+                </div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">
+                    Руны
+                </h2>
+                <div class="section-block runes-block">
+                    <div class="runes-tree primary-tree">
+                        <div class="rune-header">
+                            <img src="images/precision.png" />
+                            <span>Точность</span>
+                        </div>
+                        <div class="runes-row keystone-row">
+                            <div class="rune-item inactive">
+                                <img src="images/pta.png" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/tempo.png" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/fleet.png" />
+                            </div>
+                            <div class="rune-item">
+                                <img src="images/conq.png" />
+                            </div>
+                        </div>
+                        <div class="runes-row">
+                            <div class="rune-item inactive">
+                                <img src="images/overheal.png" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/triumf.png" />
+                            </div>
+                            <div class="rune-item">
+                                <img src="images/presence.png" />
+                            </div>
+                        </div>
+                        <div class="runes-row">
+                            <div class="rune-item inactive">
+                                <img src="images/alacrity.png" />
+                            </div>
+                            <div class="rune-item">
+                                <img src="images/tenasity.png" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/bloodline.png" />
+                            </div>
+                        </div>
+                        <div class="runes-row">
+                            <div class="rune-item inactive">
+                                <img src="images/grace.png" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/cutdown.png" />
+                            </div>
+                            <div class="rune-item">
+                                <img src="images/laststand.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="runes-tree secondary-tree">
+                        <div class="rune-header">
+                            <img src="images/inspiration.png" />
+                            <span>Вдохновение</span>
+                        </div>
+                        <div class="runes-row">
+                            <div class="rune-item inactive">
+                                <img src="images/hexflash.webp" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/footwear.webp" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/perfect-timing.webp" />
+                            </div>
+                        </div>
+                        <div class="runes-row">
+                            <div class="rune-item inactive">
+                                <img src="images/futuremarket.webp" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/dematirealizer.webp" />
+                            </div>
+                            <div class="rune-item">
+                                <img src="images/biscuit.webp" />
+                            </div>
+                        </div>
+                        <div class="runes-row">
+                            <div class="rune-item">
+                                <img src="images/insight.webp" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/approach.webp" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/timewarp.webp" />
+                            </div>
+                        </div>
+                        <div class="runes-row stat-shards-row">
+                            <div class="rune-item">
+                                <img src="images/adaptive-force.webp" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/attack-speed.webp" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/ability-haste.webp" />
+                            </div>
+                        </div>
+                        <div class="runes-row stat-shards-row">
+                            <div class="rune-item">
+                                <img src="images/adaptive-force.webp" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/attack-speed.webp" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/ability-haste.webp" />
+                            </div>
+                        </div>
+                        <div class="runes-row stat-shards-row">
+                            <div class="rune-item inactive">
+                                <img src="images/health.webp" />
+                            </div>
+                            <div class="rune-item">
+                                <img src="images/armor.webp" />
+                            </div>
+                            <div class="rune-item inactive">
+                                <img src="images/magic-resist.webp" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">
+                    Основной билд предметов
+                </h2>
+                <div class="section-block items-block">
+                    <div class="item">
+                        <img src="images/ionian-boots.webp" />
+                        <span class="item-description">
+                                Ионийские сапоги просветления
+                            </span>
+                    </div>
+                    <div class="item">
+                        <img src="images/everfrost.webp" />
+                        <span class="item-description">
+                                Вечный холод
+                            </span>
+                    </div>
+                    <div class="item">
+                        <img src="images/zhonyas.webp" />
+                        <span class="item-description">
+                                Песочные часы Жони
+                            </span>
+                    </div>
+                    <div class="item">
+                        <img src="images/cosmic-drive.webp" />
+                        <span class="item-description">
+                                Космический ускоритель
+                            </span>
+                    </div>
+                    <div class="item">
+                        <img src="images/rabadon.webp" />
+                        <span class="item-description">
+                                Смертельная шляпа Рабадона
+                            </span>
+                    </div>
+                    <div class="item">
+                        <img src="images/void-staff.webp" />
+                        <span class="item-description">
+                                Посох бездны
+                            </span>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">
+                    Порядок прокачки умений
+                </h2>
+                <div class="section-block skill-order-block">
+                    <div class="skill-order-item">
+
+                        <div class="skill-img" data-tooltip-id="skill-order-item1">
+                            <img src="images/chain-lash.webp" />
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-title">
+                                <div class="skill-title-img">
+                                    <img src="images/chain-lash.webp" />
+                                </div>
+                                <span>Удар цепями</span>
+                            </div>
+                            <div class="skill-path">
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">3</div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">14</div>
+                                <div class="path-element active">15</div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">17</div>
+                                <div class="path-element active">18</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-order-item">
+                        <div class="skill-img">
+                            <img src="images/kingslayer.webp" />
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-title">
+                                <div class="skill-title-img">
+                                    <img src="images/kingslayer.webp" />
+                                </div>
+                                <span>Убийца королей</span>
+                            </div>
+                            <div class="skill-path">
+                                <div class="path-element"></div>
+                                <div class="path-element active">2</div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">4</div>
+                                <div class="path-element active">5</div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">7</div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">9</div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-order-item">
+                        <div class="skill-img">
+                            <img src="images/abscond.webp" />
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-title">
+                                <div class="skill-title-img">
+                                    <img src="images/abscond.webp" />
+                                </div>
+                                <span>Побег / Пленение</span>
+                            </div>
+                            <div class="skill-path">
+                                <div class="path-element active">1</div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">8</div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">10</div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">12</div>
+                                <div class="path-element active">13</div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-order-item">
+                        <div class="skill-img">
+                            <img src="images/hijack.webp" />
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-title">
+                                <div class="skill-title-img">
+                                    <img src="images/hijack.webp" />
+                                </div>
+                                <span>Похищение силы</span>
+                            </div>
+                            <div class="skill-path">
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">6</div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">11</div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                                <div class="path-element active">16</div>
+                                <div class="path-element"></div>
+                                <div class="path-element"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">
+                    Описание умений
+                </h2>
+
+                <div class="section-block section-block-subtitle img-subtitle">
+                    <img src="images/petricite-burst.webp" /> <h3>Петрицитовый вихрь</h3>
+                </div>
+                <div class="section-block section-block-text">
+                    Хорошая пассивка, наносит приличное количество урона и обеспечивает неплохую зачистку миньонов. Не стоит забывать давать автоатаки,
+                    усиленные этой пассивкой, между применением умений.
+                </div>
+
+                <div class="section-block section-block-subtitle img-subtitle">
+                    <img src="images/chain-lash.webp"  /> <h3>Удар цепями</h3>
+                </div>
+                <div class="section-block section-block-text">
+                    Данная способность является одной из ключевых в арсенале чемпиона и это не удивительно. При сравнительно небольшой перезарядке
+                    Сайлас может наносить суммарно огромное количество урона группе врагов и замедлять их. Немного напрягает то, что у способности
+                    не самая быстрая анимация. К тому же вторая порция урона наносится лишь спустя 0,5 секунды и в месте пересечения цепей. Так
+                    что не удивляйтесь тому, что периодически (а возможно и часто) вы будете наносить только первоначальный урон цепями
+                </div>
+
+                <div class="section-block section-block-subtitle img-subtitle">
+                    <img src="images/kingslayer.webp" /> <h3>Убийца королей</h3>
+                </div>
+                <div class="section-block section-block-text">
+                    Основная способность Сайласа. Чем меньше у вас здоровья, тем больше здоровья восстановит это умение. Но даже несмотря
+                    на это в основном не стоит держать это умение до последнего, имеет смысл это делать только в начале игры, когда
+                    перезарядка умения большая.
+                </div>
+
+                <div class="section-block section-block-subtitle img-subtitle">
+                    <img src="images/abscond.webp" /> <h3>Побег / Пленение</h3>
+                </div>
+                <div class="section-block section-block-text">
+                    Очень гибкое умение. Можно использовать для побега, инициации и доджа вражеских скилшотов. Также обеспечивает
+                    основной урон чемпиона в начальной стадии игры. Обратите внимание, что и рывок, и бросок цепей дают по одному стаку
+                    пассивки.
+                </div>
+
+                <div class="section-block section-block-subtitle img-subtitle">
+                    <img src="images/hijack.webp" /> <h3>Похищение</h3>
+                </div>
+                <div class="section-block section-block-text">
+                    Eсли вам показалось, что предыдущие способности чемпиона весьма неплохи, то возможно вы удивитесь ульту Сайласа.
+                    Дело в том, что Сайлас может воровать ультимейты других чемпионов и использовать их. Вот тут рождается просто
+                    невероятные комбинации. Большинство ультимейтов работает корректно, но все же есть некоторые ультимейты,
+                    которые воровать практически не имеет смысла. Перечислять все ультимейты мы конечно же не будем и проще на
+                    самом деле просто поиграть чемпионом
+                </div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">
+                    Сильные и слабые стороны Сайласа
+                </h2>
+                <div class="section-block pros-cons-block">
+                    <div class="item pros-block">
+                        <h3>Сильные стороны</h3>
+                        <div class="list-item">
+                            Сильный в тимфайтах
+                        </div>
+                        <div class="list-item">
+                            Гибкость: в зависимости от ультимейтов врагов может как инициировать бои, так и поддерживать союзников
+                        </div>
+                        <div class="list-item">
+                            Неплохой дуэлянт
+                        </div>
+                        <div class="list-item">
+                            Хорошая зачистка волн
+                        </div>
+                        <div class="list-item">
+                            Большой взрывной урон
+                        </div>
+                    </div>
+                    <div class="item cons-block">
+                        <h3>Слабые стороны</h3>
+                        <div class="list-item">
+                            Имеет посредственную выживаемость
+                        </div>
+                        <div class="list-item">
+                            Слабый в начале игры
+                        </div>
+                        <div class="list-item">
+                            Не самый простой чемпион
+                        </div>
+                        <div class="list-item">
+                            Плохой выбор вслепую
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">
+                    Как играть на Сайласе
+                </h2>
+                <div class="section-block section-block-subtitle">
+                    <h3>Начальная стадия игры</h3>
+                </div>
+                <div class="section-block section-block-text">
+                    Сайлас слабый в начале игры, поэтому не стоит особо трейдится. Имеет смысл это делать только в
+                    некоторых матчапах, если оппонент потратил важную способность. Если вам не дают подойти к миньонам,
+                    то вложите 3 очка в удар цепям, чтобы было легче фармить на расстоянии и пушить волну. Старайтесь не
+                    терять здоровье на линии, чтобы вы могли сместиться на реку помочь леснику, т.к. 1 на 1 Сайлас очень
+                    слаб в начале игры. Жертвовать золотом, не добивая часть миньонов, но быть с полным уровнем здоровья
+                    стоит того. Сайласа важно не так золото, как уровень. Прокачка умений очень сильно повышает базовый
+                    урон умений.
+
+                    Уже на 9 уровне на котором у вас самый сильный поверспайк, вы можете начать играть более уверенно.
+                </div>
+                <div class="section-block section-block-subtitle">
+                    <h3>Начальная стадия игры</h3>
+                </div>
+                <div class="section-block section-block-text">
+                    Сайлас слабый в начале игры, поэтому не стоит особо трейдится. Имеет смысл это делать только в
+                    некоторых матчапах, если оппонент потратил важную способность. Если вам не дают подойти к миньонам,
+                    то вложите 3 очка в удар цепям, чтобы было легче фармить на расстоянии и пушить волну. Старайтесь не
+                    терять здоровье на линии, чтобы вы могли сместиться на реку помочь леснику, т.к. 1 на 1 Сайлас очень
+                    слаб в начале игры. Жертвовать золотом, не добивая часть миньонов, но быть с полным уровнем здоровья
+                    стоит того. Сайласа важно не так золото, как уровень. Прокачка умений очень сильно повышает базовый
+                    урон умений.
+
+                    Уже на 9 уровне на котором у вас самый сильный поверспайк, вы можете начать играть более уверенно.
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-navigation">
+                <h3>Гайд по чемпиону Сайлас</h3>
+                <div class="divider"></div>
+                <div class="nav-items-wrapper">
+                    <div class="nav-item">
+                        <a href="#">
+                            <div class="link">
+                                <div>1)</div> <div class="underlined">Руны</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">
+                            <div class="link">
+                                <div>2)</div> <div><span class="underlined">Основной билд предметов</span></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">
+                            <div class="link">
+                                <div>3)</div> <div class="underlined">Порядок прокачки умений</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">
+                            <div class="link">
+                                <div>4)</div> <div class="underlined">Описание умений</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">
+                            <div class="link">
+                                <div>5)</div> <div class="underlined">Сильные и слабые стороны Сайласа</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">
+                            <div class="link">
+                                <div>6)</div> <div class="underlined">Как играть на Сайласе</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Development -->
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+<!-- Production -->
+<!-- <script src="https://unpkg.com/@popperjs/core@2"></script>-->
+<!-- <script src="https://unpkg.com/tippy.js@6"></script>-->
+<script src="<%= url %>/public/static/js/script.js"></script>
+</body>
+</html>

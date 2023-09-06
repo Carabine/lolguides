@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= article.title[lang] %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<%= url %>/public/static/css/reset.css">
+    <link rel="stylesheet" href="<%= url %>/public/static/css/index.css">
+</head>
+<body>
+<div class="container">
+    <div class="header-container">
+        <div class="header">
+            <div class="logo-container">
+                <a class="logo" href="<%= url %>/<%= lang %>/guides">
+                    <img src="<%= url %>/public/static/images/lolguides-logo2.png" alt="logo">
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-input-wrapper"> 
+                    <input class="search-input" type="text" placeholder="<%= i18n.header.search[lang] %>">
+                    <input class="search-input-mobile" type="text" placeholder="<%= i18n.header.searchMobile[lang] %>">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="content-header" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= url %>/<%= article.imageUrl %>)">
+                <div class="content-header-title">
+                    <h1><%= article.headerTitle[lang] %></h1>
+                    <h2><%= article.headerSubtitle[lang] %></h2>
+                </div>
+            </div>
+            <% for(const [index, section] of article.sections.entries()) {%>
+                <div class="section" id="section-<%= index + 1 %>">
+                    <h2 class="section-title">
+                        <%= section.title[lang] %>
+                    </h2>
+                    <% for(const block of section.blocks) {%>
+                        <%- block %>
+                    <% } %>
+                </div>
+            <% } %>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-navigation">
+                <h3><%= article.headerTitle[lang] %></h3>
+                <div class="divider"></div>
+                <div class="nav-items-wrapper">
+                    <% for(const [index, section] of article.sections.entries()) {%>
+                        <div class="nav-item">
+                            <a href="#section-<%= index + 1 %>">
+                                <div class="link">
+                                    <div><%= index + 1%>)</div> <div class="underlined"><%= section.title[lang] %></div>
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="url" style="display: none;" data=<%= url %>></div>
+<div id="lang" style="display: none;" data=<%= lang %>></div>
+<!-- Local copy -->
+<script src="<%= url %>/public/static/js/popper.min.js"></script>
+<script src="<%= url %>/public/static/js/tippy-bundle.umd.js"></script>
+
+<!-- Development -->
+<!--<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>-->
+<!--<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>-->
+
+<!-- Production -->
+<!-- <script src="https://unpkg.com/@popperjs/core@2"></script>-->
+<!-- <script src="https://unpkg.com/tippy.js@6"></script>-->
+<script src="<%= url %>/public/static/js/script.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FQFTHLLC6J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FQFTHLLC6J');
+</script>
+</body>
+</html>
