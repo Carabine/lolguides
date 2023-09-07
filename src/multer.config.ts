@@ -35,8 +35,11 @@ export const multerConfigImage = {
     // Destination storage path details
     destination: (req: any, file: any, cb: any) => {
       console.log("DEST FUNC")
+      console.log("1")
       console.log(__dirname)
+      console.log("2")
       console.log(process.cwd())
+      console.log("3")
       console.log(multerConfigImage.dest)
       const uploadPath = multerConfigImage.dest;
       // Create folder if doesn't exist
