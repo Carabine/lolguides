@@ -1,4 +1,4 @@
-import { basename, extname } from 'path';
+import { basename, extname, join } from 'path';
 import { existsSync, mkdirSync, mkdir } from 'fs';
 import { v4 as uuid } from 'uuid';
 import { HttpException, HttpStatus, Logger } from '@nestjs/common';
@@ -13,7 +13,7 @@ const IMAGE_MAX_FILE_SIZE = 3 * 1024 * 1024;
 
 // Multer configuration
 export const multerConfigImage = {
-  dest: __dirname + '/public/storage/images',
+  dest: 'public/storage/images',
   limits: { fileSize: IMAGE_MAX_FILE_SIZE },
   fileFilter: (req: any, file: any, cb: any) => {
     Logger.debug({ file });
@@ -41,7 +41,10 @@ export const multerConfigImage = {
       console.log(process.cwd())
       console.log("3")
       console.log(multerConfigImage.dest)
-      const uploadPath = multerConfigImage.dest;
+      console.log(4)
+      
+      const uploadPath = join(__dirname, multerConfigImage.dest)
+      console.log(uploadPath)
       // Create folder if doesn't exist
       if (!existsSync(uploadPath)) {
         mkdirSync(uploadPath);
