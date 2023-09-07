@@ -27,7 +27,7 @@ export class MediaController {
   uploadImage(@UploadedFile() file: any) {
     console.log("file")
     console.log(file)
-    return {path: '/public/storage/images/' + file.filename}
+    return {path: 'public/storage/images/' + file.filename}
   }
 
 //   @Post('/upload/image')
