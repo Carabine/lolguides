@@ -17,16 +17,21 @@ export class HtmlService {
 
   async renderArticlesPage(lang) {
     const articles = await this.articlesService.findAll({
-      relations: ["title", "headerTitle", "headerSubtitle"],
+      relations: ["title", "headerTitle", "headerSubtitle", "champion", "champion.name"],
       take: 9
     })
-    return { url: this.config.get("URL"), title: {en: "Guide list", ru: "Список гайдов"}, i18n, articles, lang};
+    return { 
+      url: this.config.get("URL"), 
+      title: {en: "Guide list", ru: "Список гайдов"}, 
+      description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")}, 
+      i18n, articles, lang
+    };
   }
 
   async renderArticlePage(lang, slug) {
     const article = await this.articlesService.findOne({
       where: {slug},
-      relations: ["title", "description", "headerTitle", "headerSubtitle", "sections", "sections.title", "sections.blocks", "sections.blocks.text"],
+      relations: ["title", "description", "metaTags", "headerTitle", "headerSubtitle", "sections", "sections.title", "sections.blocks", "sections.blocks.text"],
       order: {created: "DESC", sections: {sortPosition: "ASC", blocks: {sortPosition: "ASC"}}}
     })
 
@@ -152,6 +157,8 @@ export class HtmlService {
       }
       sections.push({...section, blocks})
     }
+
+    console.log(article)
 
     return { url: this.config.get("URL"), article: {...article, imageUrl: article.imageUrl.replace(/\\/g, "/"), sections}, i18n, lang};
   }
