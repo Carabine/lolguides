@@ -40,12 +40,18 @@ export class ArticlesService {
   }
 
   async searchArticle(text, lang): Promise<any> {
-    console.log(text)
+    const capitalizedText = text.toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
+
     const articles = await this.findAll({
       where: [
-        {champion: {name: {[lang]: ILike(`%${text?.toLowerCase()}%`)}}},
-        {champion: {name: {[lang]: ILike(`%${text}%`)}}},
-        {champion: {name: {[lang]: ILike(`%${text?.charAt(0).toUpperCase() + text?.toLowerCase().slice(1)}%`)}}},
+        {champion: {name: {"ru": ILike(`%${text?.toLowerCase()}%`)}}},
+        {champion: {name: {"ru": ILike(`%${text}%`)}}},
+        {champion: {name: {"ru": ILike(`%${capitalizedText}%`)}}},
+
+        {champion: {name: {"en": ILike(`%${text?.toLowerCase()}%`)}}},
       ],
       // where: {champion: {name: {[lang]: Raw(alias => {
       //   console.log(alias)
@@ -55,7 +61,7 @@ export class ArticlesService {
       relations: ["headerTitle", "headerSubtitle", "champion", "champion.name"],
       take: 4
     })
-    console.log(articles[0]?.champion?.name[lang])
+
     return articles
   }
 
