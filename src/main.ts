@@ -39,7 +39,7 @@ async function bootstrap() {
     templates: join(__dirname, '..', 'views'),
   });
 
-  await app.listen(config.get('PORT'), "0.0.0.0", () => {
+  await app.listen(config.get('PORT'), () => {
     console.log(`App started on port ${config.get('PORT')}`)
     console.log(JSON.stringify(config.list()));
   });
