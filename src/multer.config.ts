@@ -17,7 +17,7 @@ export const multerConfigImage = {
   limits: { fileSize: IMAGE_MAX_FILE_SIZE },
   fileFilter: (req: any, file: any, cb: any) => {
     Logger.debug({ file });
-    if (file.mimetype.match(/\/(jpg|jpeg|png|svg\+xml)$/)) {
+    if (file.mimetype.match(/\/(jpg|jpeg|png|webp|svg\+xml)$/)) {
       // Allow storage of file
       cb(null, true);
     } else {
