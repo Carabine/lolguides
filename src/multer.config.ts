@@ -13,7 +13,7 @@ const IMAGE_MAX_FILE_SIZE = 3 * 1024 * 1024;
 
 // Multer configuration
 export const multerConfigImage = {
-  dest: '/public/storage/images',
+  dest: __dirname + '/public/storage/images',
   limits: { fileSize: IMAGE_MAX_FILE_SIZE },
   fileFilter: (req: any, file: any, cb: any) => {
     Logger.debug({ file });
@@ -41,7 +41,7 @@ export const multerConfigImage = {
       if (!existsSync(uploadPath)) {
         mkdirSync(uploadPath);
       }
-      cb(null, __dirname + uploadPath);
+      cb(null, uploadPath);
     },
     // File modification details
     filename: (req: any, file: any, cb: any) => {
