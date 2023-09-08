@@ -19,7 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "start:pm2": "cross-env NODE_ENV=prod pm2 start dist/main.js --name lolguides"
+    "start:pm2": "export NODE_ENV=prod && pm2 start dist/main.js --name lolguides"
   },
   "dependencies": {
     "@fastify/multipart": "^6.0.0",
