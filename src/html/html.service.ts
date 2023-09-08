@@ -22,7 +22,7 @@ export class HtmlService {
     })
     return { 
       url: this.config.get("URL"), 
-      title: {en: "Guide list", ru: "Список гайдов"}, 
+      title: {en: "Guide list :: LoLGuides", ru: "Список гайдов :: LoLGuides"}, 
       description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")}, 
       i18n, articles, lang
     };
