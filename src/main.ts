@@ -12,6 +12,11 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter()
   );
+  console.log(1)
+  console.log(process.env.NODE_ENV)
+  console.log(2)
+
+  console.log(process.env.NODE_ENV)
   const config = app.get<ConfigService>(ConfigService);
 
   await app.register(multipart);
@@ -30,8 +35,9 @@ async function bootstrap() {
 
   app.useStaticAssets({
     root: join(__dirname, '..', 'public'),
-    prefix: '/public/',
+    prefix: '/public/'
   });
+
   app.setViewEngine({
     engine: {
       handlebars: require('ejs'),

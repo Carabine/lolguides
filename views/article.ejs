@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= article.title[lang] %></title>
     <meta name="description" content="<%= article.description[lang] %>">
     <%- article.metaTags[lang] %>
-    <link rel="shortcut icon" type="image/x-icon" href="<%= url %>/public/static/images/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="<%= url %>/public/static/images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
         <div class="header">
             <div class="logo-container">
                 <a class="logo" href="<%= url %>/<%= lang %>/guides">
-                    <img src="<%= url %>/public/static/images/lolguides-logo2.png" alt="logo">
+                    <img src="<%= url %>/public/static/images/lolguides-logo3.png" alt="logo">
                 </a>
             </div>
             <div class="search-container">
@@ -87,12 +87,6 @@
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQFTHLLC6J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FQFTHLLC6J');
-</script>
+<script async src="<%= url %>/public/static/js/gtag.js"></script>
 </body>
 </html>
