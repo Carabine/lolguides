@@ -36,7 +36,7 @@ export class HtmlService {
   async renderArticlePage(lang, slug) {
     const article = await this.articlesService.findOne({
       where: {slug},
-      relations: ["title", "description", "metaTags", "headerTitle", "headerSubtitle", "sections", "sections.title", "sections.blocks", "sections.blocks.text"],
+      relations: ["title", "description", "metaTags", "headerTitle", "headerSubtitle", "champion", "champion.name", "sections", "sections.title", "sections.blocks", "sections.blocks.text"],
       order: {created: "DESC", sections: {sortPosition: "ASC", blocks: {sortPosition: "ASC"}}}
     })
 

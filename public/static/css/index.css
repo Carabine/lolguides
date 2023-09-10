@@ -322,6 +322,13 @@ html,body {
     text-align: center;
 }
 
+.alt-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .section {
     display: flex;
     flex-direction: column;

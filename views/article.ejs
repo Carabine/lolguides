@@ -36,7 +36,8 @@
         </div>
         <div class="content-wrapper">
             <div class="content">
-                <div class="content-header" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= url %>/<%= article.imageUrl %>)">
+                <div role="img" title="<%= article.champion?.name?.[lang] ?? '' %>" aria-label="<%= article.champion?.name?.[lang] ?? '' %>" class="content-header" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= url %>/<%= article.imageUrl %>)">
+                    <img src="" alt="<%= article.champion?.name?.[lang] ?? '' %>" class="alt-image"/>
                     <div class="content-header-title">
                         <h1><%= article.headerTitle[lang] %></h1>
                         <h2><%= article.headerSubtitle[lang] %></h2>
