@@ -402,18 +402,20 @@ html,body {
 }
 
 .section-block-text .text-tooltip {
-    display: inline-flex;
+    display: inline-block;
+    white-space: nowrap;
     gap: 3px;
     align-items: center;
     color: #4169E1;
     cursor: pointer;
-    transform: translateY(1.75px);
     font-weight: 500;
 }
 
 .section-block-text .text-tooltip img {
     height: 14px;
     width: 14px;
+    vertical-align: middle;
+    margin-bottom: 2px;
 }
 
 .section-block-text .text-tooltip:hover {
@@ -693,7 +695,8 @@ html,body {
 }
 
 .cons-block {
-    color: #C21E56;
+    /* color: #FF6B6B; */
+    color: #FE3333;
 }
 
 .pros-cons-block .list-item {
