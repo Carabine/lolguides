@@ -23,7 +23,12 @@ export class HtmlService {
     return { 
       url: this.config.get("URL"), 
       title: {en: "Guide list :: LoLGuides", ru: "Список гайдов :: LoLGuides"}, 
-      description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")}, 
+      metaTitle: {en: "League of Legends guides: build, runes, items, strategy", ru: "Гайды по League of Legends: сборка, руны, предметы, стратегия"},
+      // description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")}, 
+      description: {
+        en: "Unlock Victory with League of Legends Guides! Discover Strategies, Champion Tips, and Winning Tactics on LoLGuides. Dominate and Climb the Ranks with our Comprehensive Resources",
+        ru: "Достигните победы с гайдами по Лиге Легенд! Откройте для себя стратегии, советы по чемпионам и выигрышные тактики на LoLGuides. Доминируйте и поднимайтесь в рейтинге с нашими всесторонними ресурсами"
+      },
       i18n, articles, lang
     };
   }
