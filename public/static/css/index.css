@@ -229,7 +229,7 @@ html,body {
 .content-wrapper {
     display: flex;
     width: 100%;
-    margin: 80px 15px 30px;
+    margin: 80px 15px 15px;
     padding: 24px;
     min-height: 100vh;
     background: #191919;
@@ -1084,6 +1084,121 @@ html,body {
     .article-item {
         width: 100%;
         margin-bottom: 10%;
+    }
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #191919;
+    height: 60px;
+    width: 100%;
+    z-index: 10;
+}
+
+.footer-container .footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2px;
+    margin: 0 18px;
+}
+
+.footer .footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left .copyright {
+    color:#D3D3D3
+}
+
+.footer-center .img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #323232;
+    padding: 4px 7px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.footer-center .img-container:hover {
+    background-color: #464646;
+}
+
+.footer-center img {
+    height: 36px;
+    width: auto;
+    cursor: pointer;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+  
+.footer-right select {
+    background-color: #323232;
+    color: white;
+    padding: 5px 28px 4px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: 0.2s;
+}
+
+.footer-right select:hover {
+    background: #282828;
+    color: #f0f0f0;
+}
+
+.socials {
+    display: flex;
+    gap: 8px;
+}
+
+.socials .social-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    height: 32px;
+    width: 32px;
+    transition: 0.2s;
+    border-radius: 50%;
+    background: #323232;
+    color: #fff;
+}
+
+.socials .social-item:hover {
+    background: #282828;
+}
+
+.social-item img {
+    width: 18px;
+    height: 18px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .footer-container {
+        align-items: center;
+        height: auto;
+        padding: 12px;
+    }
+    .footer-container .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
     }
 }
 

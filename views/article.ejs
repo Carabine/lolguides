@@ -73,6 +73,35 @@
             </div>
         </div>
     </div>
+    <div class="footer-container">
+        <div class="footer">
+            <div class="footer-left">
+                <span class="copyright">
+                    Copyright 2023 © LoLGuides
+                </span>
+            </div>
+            <div class="footer-right">      
+                <select id="lang-select">
+                    <option value="en" <%= lang == 'en' ? "selected" : "" %> >English</option>
+                    <option value="ru" <%= lang == 'ru' ? "selected" : "" %> >Русский</option>
+                </select>
+                <div class="socials">
+                    <a href="https://twitter.com/LoLGuides" class="social-item">                            
+                        <img src="<%= url %>/public/static/images/twitter.svg">              
+                    </a>
+                    <a href="#" class="social-item">                            
+                        <img src="<%= url %>/public/static/images/facebook.svg">              
+                    </a>
+                    <a href="mailto:lolguides.business@gmail.com" class="social-item">                            
+                        <img src="<%= url %>/public/static/images/mail.svg">              
+                    </a>
+                    <a href="https://www.youtube.com/@lolguides_space" class="social-item">                            
+                        <img src="<%= url %>/public/static/images/youtube.svg">              
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="url" style="display: none;" data=<%= url %>></div>
     <div id="lang" style="display: none;" data=<%= lang %>></div>
     <noscript id="deferred-styles">

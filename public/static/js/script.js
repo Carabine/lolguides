@@ -186,5 +186,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     searchInputMobile.addEventListener("input", searchInputHandler)
     searchInputMobile.addEventListener("click", searchInputHandler)
+
+    const langSelect = document.querySelector("#lang-select")
+    langSelect.addEventListener("change", (e) => {
+        if(!(e?.target?.value && e.target.value === lang)) {
+            console.log()
+            window.location.replace(window.location.href.replace(lang, e.target.value));
+        }
+    })
 })
 
