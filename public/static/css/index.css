@@ -1152,7 +1152,6 @@ html,body {
     appearance: button;
     outline: none;
     cursor: pointer;
-    border: 1px solid white;
     transition: 0.2s;
 }
 
