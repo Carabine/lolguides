@@ -8,8 +8,8 @@
     <title><%= article.title[lang] %></title>
     <meta name="description" content="<%= article.description[lang] %>">
     <%- article.metaTags[lang] %>
-    <link rel="alternate" href="<%= url %>/en/guides/<%= article.slug %>" hreflang="en" />
-    <link rel="alternate" href="<%= url %>/ru/guides/<%= article.slug %>" hreflang="ru" />
+    <link rel="alternate" href="<%= url %>/en/<%= article.slug %>" hreflang="en" />
+    <link rel="alternate" href="<%= url %>/ru/<%= article.slug %>" hreflang="ru" />
     <link rel="shortcut icon" type="image/x-icon" href="<%= url %>/public/static/images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
         <div class="header-container">
             <div class="header">
                 <div class="logo-container">
-                    <a class="logo" href="<%= url %>/<%= lang %>/guides">
+                    <a class="logo" href="<%= url %>/<%= lang == 'en' ? '' : lang %>">
                         <img src="<%= url %>/public/static/images/lolguides-logo3.png" alt="logo">
                     </a>
                 </div>

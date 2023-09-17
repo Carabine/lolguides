@@ -189,10 +189,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const langSelect = document.querySelector("#lang-select")
     langSelect.addEventListener("change", (e) => {
+        
         if(!(e?.target?.value && e.target.value === lang)) {
-            console.log()
-            window.location.replace(window.location.href.replace(lang, e.target.value));
+            if(window.location.href == `${url}/`) {
+                window.location.replace(`${url}/${e.target.value}`);
+            } else if(window.location.href == `${url}/${lang}`) {
+                window.location.replace(`${url}/`);
+            } else {
+                window.location.replace(window.location.href.replace(lang, e.target.value));
+            }
+            
         }
     })
+
+    const bannerButton = document.querySelector(".banner-button")
+    if(bannerButton) {
+        bannerButton.addEventListener("click", (e) => {
+            if(searchInput) searchInput.focus()
+            if(searchInputMobile) searchInputMobile.focus()
+        })
+    }
 })
 

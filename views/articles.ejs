@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= metaTitle[lang] %></title>
     <meta name="description" content="<%= description[lang] %>">
-    <link rel="canonical" href="<%= url %>/<%= lang %>/guides" />
-    <link rel="alternate" href="<%= url %>/en/guides" hreflang="en" />
-    <link rel="alternate" href="<%= url %>/ru/guides" hreflang="ru" />
+    <link rel="canonical" href="<%= url %><%= lang == 'en' ? '' : lang %>" />
+    <link rel="alternate" href="<%= url %>" hreflang="en" />
+    <link rel="alternate" href="<%= url %>/ru" hreflang="ru" />
     <link rel="shortcut icon" type="image/x-icon" href="<%= url %>/public/static/images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="<%= url %>/public/static/css/index.css">
 </head>
 <body>
-<div class="container articles-page">
+<div class="container main-page">
     <div class="header-container">
         <div class="header">
             <div class="logo-container">
-                <a class="logo" href="<%= url %>/<%= lang %>/guides">
+                <a class="logo" href="<%= url %>/<%= lang == 'en' ? '' : lang %>">
                     <img src="<%= url %>/public/static/images/lolguides-logo3.png" alt="logo">
                 </a>
             </div>
@@ -36,19 +36,43 @@
     </div>
     <div class="content-wrapper">
         <div class="content">
-            <h1 class="page-title">
-                <%= title[lang] %>
-            </h1>
-            <div class="articles-container">
-                <% for(const article of articles) {%>
-                    <a href="<%= url %>/<%= lang %>/guides/<%= article.slug %>" class="article-item">
-                        <div class="article-bg" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= url %>/<%= article.imageUrl.replace(/\\/g, "/") %>)">
-                        </div>
-                        <div class="article-title">
-                            <h2><%= article.headerTitle[lang] %></h2>
-                        </div>
-                    </a>      
-                <% } %>
+            <h1 class="page-title"><%= i18n.mainPage.title[lang] %></h1>
+            <div class="section first-section">
+                <div class="section-block section-block-text"><%= i18n.mainPage.blockText[lang] %></div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">
+                    <%= title[lang] %>
+                </h2>
+                <div class="articles-container">
+                    <% for(const article of articles) {%>
+                        <a href="<%= url %>/<%= lang %>/<%= article.slug %>" class="article-item">
+                            <div class="article-bg" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= url %>/<%= article.imageUrl.replace(/\\/g, "/") %>)">
+                            </div>
+                            <div class="article-title">
+                                <h2><%= article.headerTitle[lang] %></h2>
+                            </div>
+                        </a>      
+                    <% } %>
+                </div>             
+            </div>
+            <div class="section">
+                <div class="banner" style="background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(<%= url %>/public/static/images/lol-art.webp)">
+                    <div class="banner-left">
+                        <h2 class="banner-title">
+                            <%= i18n.mainPage.bannerTitle[lang] %>
+                        </h2>
+                        <span class="banner-text">
+                            <%= i18n.mainPage.bannerText[lang] %>                
+                        </span>
+                    </div>
+                    <div class="banner-right">
+                        <button class="banner-button">
+                            <%= i18n.mainPage.bannerButton[lang] %>
+                        </button>
+                    </div>
+                </div>
+                        
             </div>
         </div>
     </div>

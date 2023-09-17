@@ -18,11 +18,11 @@ export class HtmlService {
   async renderArticlesPage(lang) {
     const articles = await this.articlesService.findAll({
       relations: ["title", "headerTitle", "headerSubtitle", "champion", "champion.name"],
-      take: 9
+      take: 3
     })
     return { 
       url: this.config.get("URL"), 
-      title: {en: "Guide list :: LoLGuides", ru: "Список гайдов :: LoLGuides"}, 
+      title: {en: "Recent guides", ru: "Последние гайды"}, 
       metaTitle: {en: "League of Legends guides: builds, runes, items, strategies", ru: "Гайды по League of Legends: сборки, руны, предметы, стратегии"},
       // description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")}, 
       description: {
