@@ -349,7 +349,7 @@ html,body {
     padding: 6px 12px;
     position: relative;
     line-height: 24px;
-    color: white;
+
 }
 
 .section-title:before {
@@ -396,7 +396,6 @@ html,body {
     margin-top: 10px;
     margin-left: 6px;
     cursor: pointer;
-    color: white;
 }
 
 .img-subtitle img{
@@ -561,7 +560,6 @@ html,body {
     align-items: center;
     gap: 8px;
     margin: 0px;
-    color: white;
 }
 
 .items-block .items-container {
