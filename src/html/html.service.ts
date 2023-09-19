@@ -328,7 +328,7 @@ export class HtmlService {
 
   getTooltip(data, id, lang, alt = "") {
     return `
-      <div class="tooltip-wrapper" id="${id}" style="display:none">
+      <div class="tooltip-wrapper" id="${id}" style="display:none" data-nosnippet>
         <div class="tooltip">
           <div class="tooltip-header">
              <img src="${data.image}" alt="${alt}" /> <span class="tooltip-title">${data.name[lang]}</span>
