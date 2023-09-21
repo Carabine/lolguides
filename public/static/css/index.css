@@ -262,7 +262,7 @@ html,body {
     border-radius: 5px;
 }
 
-.sidebar-navigation h3 {
+.sidebar-navigation .nav-title {
     font-weight: 400;
     font-size: 18px;
     margin-bottom: 6px;
@@ -315,7 +315,7 @@ html,body {
 
 .content-header-title h1 {
     text-align: center;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 500;
 }
 
@@ -343,7 +343,7 @@ html,body {
 }
 
 .section-title {
-    font-size: 26px;
+    font-size: 25px;
     font-weight: 500;
     margin: 6px 0 10px;
     padding: 6px 12px;
@@ -365,9 +365,9 @@ html,body {
     background: #4169E1;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 450px) {
     .section-title {
-        font-size: 24px;
+        font-size: 23px;
     }
 }
 
@@ -772,7 +772,7 @@ html,body {
 
 @media screen and (max-width: 800px) {
     .content-header-title h1 {
-       font-size: 34px;
+       font-size: 26px;
     }
 }
 
@@ -870,6 +870,7 @@ html,body {
 @media screen and (max-width: 500px) {
     .content-header {
         height: 200px;
+        padding: 0 16px;
     }
 
     .content-wrapper {
@@ -966,11 +967,11 @@ html,body {
 
 @media screen and (max-width: 450px) {
     .content-header-title h1 {
-        font-size: 28px;
+        font-size: 22px;
     }
 
     .content-header-title h2 {
-        font-size: 17px;
+        font-size: 16px;
     }    
 }
 
@@ -1331,6 +1332,10 @@ html,body {
 
 .display-none {
     display: none !important;
+}
+
+.no-wrap-text {
+    white-space: nowrap;
 }
 
 ::-webkit-scrollbar-track {

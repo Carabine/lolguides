@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="header-container">
+        <header class="header-container">
             <div class="header">
                 <div class="logo-container">
                     <a class="logo" href="<%= url %>/<%= lang == 'en' ? '' : lang %>">
@@ -33,13 +33,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
         <div class="content-wrapper">
             <div class="content">
                 <div role="img" title="<%= article.champion?.name?.[lang] ?? '' %>" aria-label="<%= article.champion?.name?.[lang] ?? '' %>" class="content-header" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= url %>/<%= article.imageUrl %>)">
                     <img src="" alt="<%= article.champion?.name?.[lang] ?? '' %>" class="alt-image"/>
                     <div class="content-header-title">
-                        <h1><%= article.headerTitle[lang] %></h1>
+                        <h1> <%= article.headerTitle[lang] %> — League of Legends </h1>
                         <h2><%= article.headerSubtitle[lang] %></h2>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
             </div>
             <div class="sidebar">
                 <div class="sidebar-navigation">
-                    <h3><%= article.headerTitle[lang] %></h3>
+                    <div class="nav-title"><%= article.headerTitle[lang] %></div>
                     <div class="divider"></div>
                     <div class="nav-items-wrapper">
                         <% for(const [index, section] of article.sections.entries()) {%>
@@ -73,7 +73,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-container">
+    <footer class="footer-container">
         <div class="footer">
             <div class="footer-left">
                 <span class="copyright">
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
     <div id="url" style="display: none;" data=<%= url %>></div>
     <div id="lang" style="display: none;" data=<%= lang %>></div>
     <noscript id="deferred-styles">
