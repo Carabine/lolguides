@@ -39,7 +39,7 @@
                 <div role="img" title="<%= article.champion?.name?.[lang] ?? '' %>" aria-label="<%= article.champion?.name?.[lang] ?? '' %>" class="content-header" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= url %>/<%= article.imageUrl %>)">
                     <img src="" alt="<%= article.champion?.name?.[lang] ?? '' %>" class="alt-image"/>
                     <div class="content-header-title">
-                        <h1> <%= article.headerTitle[lang] %> — League of Legends </h1>
+                        <h1> <%= article.headerTitle[lang] %> </h1>
                         <h2><%= article.headerSubtitle[lang] %></h2>
                     </div>
                 </div>
@@ -53,6 +53,24 @@
                         <% } %>
                     </div>
                 <% } %>
+                <div class="section">
+                    <div class="banner" style="background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(<%= url %>/public/static/images/syndra.webp)">
+                        <div class="banner-left">
+                            <h2 class="banner-title">
+                                <%= i18n.mainPage.bannerTitle[lang] %>
+                            </h2>
+                            <span class="banner-text">
+                                <%= i18n.mainPage.bannerText[lang] %>                
+                            </span>
+                        </div>
+                        <div class="banner-right">
+                            <button class="banner-button">
+                                <%= i18n.mainPage.bannerButton[lang] %>
+                            </button>
+                        </div>
+                    </div>
+                            
+                </div>
             </div>
             <div class="sidebar">
                 <div class="sidebar-navigation">
@@ -86,7 +104,7 @@
                     <option value="ru" <%= lang == 'ru' ? "selected" : "" %> >Русский</option>
                 </select>
                 <div class="socials">
-                    <a href="https://twitter.com/LoLGuides" class="social-item" target="_blank" rel="noopener">                            
+                    <a href="https://twitter.com/LoLGuides" class="social-item" target="_blank" rel="me">                            
                         <img src="<%= url %>/public/static/images/twitter.svg" alt="twitter">              
                     </a>
                     <a href="#" class="social-item" target="_blank" rel="noopener">                            
@@ -95,7 +113,7 @@
                     <a href="mailto:lolguides.business@gmail.com" class="social-item">                            
                         <img src="<%= url %>/public/static/images/mail.svg" alt="mail">              
                     </a>
-                    <a href="https://www.youtube.com/@lolguides_space" class="social-item" target="_blank" rel="noopener">                             
+                    <a href="https://www.youtube.com/@lolguides_space" class="social-item" target="_blank" rel="me">                             
                         <img src="<%= url %>/public/static/images/youtube.svg" alt="youtube">              
                     </a>
                 </div>

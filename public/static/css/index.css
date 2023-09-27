@@ -997,6 +997,44 @@ html,body {
     padding-right: 32px; */
 }
 
+.first-section {
+    position: relative;
+    margin: calc(16px + 12px) auto 32px;
+    padding: 0;
+}
+
+.first-section .section-block-text {
+    text-align: center;
+    width: 80%;
+    align-self: center;
+    line-height: 1.5em;
+    padding: 4px 0;
+}
+
+.first-section:after, .first-section:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 4px;
+    background: #4169E1;
+    right: 0;
+    top:0;
+}
+
+.first-section:before {
+    left: 0;
+}
+
+.title-banner {
+    padding: 38px 24px 24px 24px;
+    background-size: cover;
+    background-position: 50% 20%;
+}
+
+.title-banner .section-block-text {
+    color: white;
+}
+
 .page-title {
     font-size: 32px;
     font-weight: 500;
@@ -1005,14 +1043,14 @@ html,body {
 }
 
 .main-page .section-block{
-    padding: 0;
     font-size: 16px;
 }
 
 @media screen and (max-width: 650px) {
-    .main-page .first-section {
-        padding-top: 8px;
+    .first-section .section-block-text {
+        width: 85%;
     }
+    
 }
 
 @media screen and (max-width: 550px) {
@@ -1022,6 +1060,24 @@ html,body {
     .main-page .section-block{
         font-size: 13px;
         line-height: 18px;
+    }  
+    .first-section {
+        margin: calc(16px + 12px) auto 14px
+    }
+    .title-banner {
+        padding: 20px 0px 10px;
+        background-position: 50% 0%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .first-section {
+        margin: 24px auto 16px;
+    }
+    .first-section .section-block-text {
+        width: 90%;
+        letter-spacing: 0.3px;
+        line-height: 1.35em;
     }
 }
 
@@ -1117,7 +1173,7 @@ html,body {
     }
 }
 
-.main-page .banner {
+.banner {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1127,6 +1183,7 @@ html,body {
     background-size: cover;
     padding: 0 24px;
     color: white;
+    background-position: 50% 20%;
 }
 
 .banner .banner-left{
@@ -1167,7 +1224,7 @@ html,body {
 
 
 @media screen and (max-width: 800px) {
-    .main-page .banner {
+    .banner {
         flex-direction: column;
         padding: 24px;
         height: auto;
@@ -1194,7 +1251,7 @@ html,body {
 }
 
 @media screen and (max-width: 450px) {
-    .main-page .banner {
+    .banner {
         flex-direction: column;
         padding: 16px 12px;
         height: auto;

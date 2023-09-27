@@ -36,10 +36,13 @@
         </header>
         <div class="content-wrapper">
             <div class="content">
-                <h1 class="page-title"><%= i18n.mainPage.title[lang] %></h1>
-                <div class="section first-section">
-                    <div class="section-block section-block-text"><%= i18n.mainPage.blockText[lang] %></div>
+                <div class="title-banner" style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(<%= url %>/public/static/images/lol-art.webp)"> 
+                    <h1 class="page-title"><%= i18n.mainPage.title[lang] %></h1>
+                    <div class="section first-section">
+                        <div class="section-block section-block-text"><%= i18n.mainPage.blockText[lang] %></div>
+                    </div>
                 </div>
+
                 <div class="section">
                     <h2 class="section-title">
                         <%= title[lang] %>
@@ -57,7 +60,7 @@
                     </div>             
                 </div>
                 <div class="section">
-                    <div class="banner" style="background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(<%= url %>/public/static/images/lol-art.webp)">
+                    <div class="banner" style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(<%= url %>/public/static/images/syndra.webp)">
                         <div class="banner-left">
                             <h2 class="banner-title">
                                 <%= i18n.mainPage.bannerTitle[lang] %>
@@ -90,7 +93,7 @@
                     <option value="ru" <%= lang == 'ru' ? "selected" : "" %> >Русский</option>
                 </select>
                 <div class="socials">
-                    <a href="https://twitter.com/LoLGuides" class="social-item" target="_blank" rel="noopener">                            
+                    <a href="https://twitter.com/LoLGuides" class="social-item" target="_blank" rel="me">                            
                         <img src="<%= url %>/public/static/images/twitter.svg" alt="twitter">              
                     </a>
                     <a href="#" class="social-item" target="_blank" rel="noopener">                            
@@ -99,7 +102,7 @@
                     <a href="mailto:lolguides.business@gmail.com" class="social-item">                            
                         <img src="<%= url %>/public/static/images/mail.svg" alt="mail">              
                     </a>
-                    <a href="https://www.youtube.com/@lolguides_space" class="social-item" target="_blank" rel="noopener">                             
+                    <a href="https://www.youtube.com/@lolguides_space" class="social-item" target="_blank" rel="me">                             
                         <img src="<%= url %>/public/static/images/youtube.svg" alt="youtube">              
                     </a>
                 </div>
