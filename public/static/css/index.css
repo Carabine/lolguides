@@ -997,13 +997,13 @@ html,body {
     padding-right: 32px; */
 }
 
-.first-section {
+.main-page .first-section {
     position: relative;
     margin: calc(16px + 12px) auto 32px;
     padding: 0;
 }
 
-.first-section .section-block-text {
+.main-page .first-section .section-block-text {
     text-align: center;
     width: 80%;
     align-self: center;
@@ -1011,7 +1011,7 @@ html,body {
     padding: 4px 0;
 }
 
-.first-section:after, .first-section:before {
+.main-page .first-section:after, .main-page .first-section:before {
     position: absolute;
     content: "";
     height: 100%;
@@ -1021,7 +1021,7 @@ html,body {
     top:0;
 }
 
-.first-section:before {
+.main-page .first-section:before {
     left: 0;
 }
 
@@ -1047,7 +1047,7 @@ html,body {
 }
 
 @media screen and (max-width: 650px) {
-    .first-section .section-block-text {
+    .main-page .first-section .section-block-text {
         width: 85%;
     }
     
@@ -1061,7 +1061,7 @@ html,body {
         font-size: 13px;
         line-height: 18px;
     }  
-    .first-section {
+    .main-page .first-section {
         margin: calc(16px + 12px) auto 14px
     }
     .title-banner {
@@ -1071,10 +1071,10 @@ html,body {
 }
 
 @media screen and (max-width: 450px) {
-    .first-section {
+    .main-page.first-section {
         margin: 24px auto 16px;
     }
-    .first-section .section-block-text {
+    .main-page .first-section .section-block-text {
         width: 90%;
         letter-spacing: 0.3px;
         line-height: 1.35em;
@@ -1083,9 +1083,12 @@ html,body {
 
 .articles-container {
     display: flex;
+    position: relative;
     width: 100%;
     flex-wrap: wrap;
     gap: 6%;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .article-item {
@@ -1136,7 +1139,40 @@ html,body {
     padding: 0 10px 0px 18px;
 }
 
+.all-guides {
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 17px;
+    color: white;
+    letter-spacing: 0.15vw;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .2s;
+    text-decoration: none;
+}
+
+.all-guides svg{
+    fill: white;
+    transform: translateY(0.5px);
+}
+
+.all-guides:hover {
+    color: #BEBEBE;
+}
+
+.all-guides:hover svg {
+    fill: #BEBEBE;
+}
+
 @media screen and (max-width: 1000px) {
+    .all-guides {
+        bottom: -4px;
+    }
+
     .articles-container {
         gap: 4%;
     }
@@ -1157,6 +1193,9 @@ html,body {
 }
 
 @media screen and (max-width: 700px) {
+    .all-guides {
+        left: 0px;
+    }
     .articles-container {
         gap: 6%;
     }
@@ -1167,6 +1206,10 @@ html,body {
 }
 
 @media screen and (max-width: 500px) {
+    .all-guides {
+        justify-content: flex-end;
+        bottom: -2px;
+    }
     .article-item {
         width: 100%;
         margin-bottom: 10%;
@@ -1385,6 +1428,71 @@ html,body {
         align-items: center;
         gap: 8px;
     }
+}
+
+/* GUIDES PAGE*/
+
+.guides-page .first-section {
+    padding-top: 0;
+}
+
+.champions-container{
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px 26px;
+    padding: 20px 0px 10px;
+    border-radius: 5px;
+}
+
+.champions-container .champion-item {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.champion-item img {
+    border: 1px solid #4169E1;
+    height: 70px;
+}
+
+.champion-item .champion-description {
+    font-size: 11px;
+    text-align: center;
+    word-break: break-word;
+    color: #BEBEBE;
+    line-height: 10px;
+}
+
+.in-development-block {
+    width: 100%;
+    background: #323232;
+    padding: 16px;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 800px) {
+    .champions-container{
+        gap: 12px 22px;
+        padding: 20px 0px 4px;
+    }
+    
+    .champions-container .champion-item {
+        width: 54px;
+        gap: 8px;
+    }
+    
+    .champion-item img {
+        height: 54px;
+    }
+    .champion-item .champion-description {
+        font-size: 10px;
+    }
+    
 }
 
 .display-none {

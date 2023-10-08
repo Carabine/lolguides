@@ -17,10 +17,10 @@ export class HtmlController {
     return { url: `${this.config.get("URL")}/${lang}/${slug}` };
   }
   
-  @Redirect()
   @Get("/:lang/guides")
+  @Render('guides.ejs')
   async redirectArticle(@Param("lang") lang: "ru" | "en" = "en", @Res() res) {
-    return { url: `${this.config.get("URL")}/${lang == "en" ? "" : lang }` };
+    return await this.htmlService.renderGuidesPage(lang)
   }
 
   @Get("/:lang/:slug")
@@ -31,14 +31,14 @@ export class HtmlController {
 
   @Get("/:lang")
   @Render("articles.ejs")
-  async renderArticlesPage(@Param("lang") lang: "ru" | "en" = "en") {
-    return await this.htmlService.renderArticlesPage(lang)
+  async renderMainPage(@Param("lang") lang: "ru" | "en" = "en") {
+    return await this.htmlService.renderMainPage(lang)
   }
 
   @Get("/")
   @Render("articles.ejs")
-  async renderMainPage(@Param("lang") lang: "ru" | "en" = "en") {
-    return await this.htmlService.renderArticlesPage(lang)
+  async renderMainPageEn(@Param("lang") lang: "ru" | "en" = "en") {
+    return await this.htmlService.renderMainPage(lang)
   }
 
 

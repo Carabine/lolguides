@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="<%= url %>/public/static/css/index.css">
 </head>
 <body>
-    <div class="container main-page">
+    <div class="container guides-page">
         <header class="header-container">
             <div class="header">
                 <div class="logo-container">
@@ -37,54 +37,43 @@
         </header>
         <div class="content-wrapper">
             <div class="content">
-                <div class="title-banner" style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(<%= url %>/public/static/images/lol-art.webp)"> 
-                    <h1 class="page-title"><%= i18n.mainPage.title[lang] %></h1>
-                    <div class="section first-section">
-                        <div class="section-block section-block-text"><%= i18n.mainPage.blockText[lang] %></div>
-                    </div>
-                </div>
-
-                <div class="section">
+                <div class="section first-section">
                     <h2 class="section-title">
                         <%= title[lang] %>
                     </h2>
-                    <div class="articles-container">
-                        <% for(const article of articles) {%>
-                            <a href="<%= url %>/<%= lang %>/<%= article.slug %>" class="article-item">
-                                <div class="article-bg" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= url %>/<%= article.imageUrl.replace(/\\/g, "/") %>)">
-                                </div>
-                                <div class="article-title">
-                                    <h2><%= article.headerTitle[lang] %></h2>
-                                </div>
-                            </a>      
-                        <% } %>
-                        <a class="all-guides" href="<%= url %>/<%= lang %>/guides">
-                            ALL GUIDES
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 768 768">
-                                <path d="M187.5 132l69-67.5 319.5 319.5-319.5 319.5-69-67.5 253.5-252z"></path>
-                            </svg>         
-                        <a>            
-                    </div>   
-                            
+                    <div class="champions-container">
+                      <% for(const article of articles) {%>
+                        <a href="<%= url %>/<%= lang %>/<%= article.slug %>" class="champion-item">
+                          <img src="<%= article.champion.image %>" />
+                          <span class="champion-description">
+                            <%= article.champion.name[lang] %>
+                          </span>
+                        </a>  
+                     
+                      <% } %>
+                    </div>     
+                    <div class="in-development-block">
+                      <h2> <%= inDevelopment[lang] %></h2>
+                    </div>        
                 </div>
                 <div class="section">
-                    <div class="banner" style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(<%= url %>/public/static/images/syndra.webp)">
-                        <div class="banner-left">
-                            <h2 class="banner-title">
-                                <%= i18n.mainPage.bannerTitle[lang] %>
-                            </h2>
-                            <span class="banner-text">
-                                <%= i18n.mainPage.bannerText[lang] %>                
-                            </span>
-                        </div>
-                        <div class="banner-right">
-                            <button class="banner-button">
-                                <%= i18n.mainPage.bannerButton[lang] %>
-                            </button>
-                        </div>
-                    </div>
-                            
-                </div>
+                  <div class="banner" style="background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(<%= url %>/public/static/images/syndra.webp)">
+                      <div class="banner-left">
+                          <h2 class="banner-title">
+                              <%= i18n.mainPage.bannerTitle[lang] %>
+                          </h2>
+                          <span class="banner-text">
+                              <%= i18n.mainPage.bannerText[lang] %>                
+                          </span>
+                      </div>
+                      <div class="banner-right">
+                          <button class="banner-button">
+                              <%= i18n.mainPage.bannerButton[lang] %>
+                          </button>
+                      </div>
+                  </div>
+                          
+              </div>
             </div>
         </div>
     </div>

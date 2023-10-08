@@ -15,7 +15,7 @@ export class HtmlService {
     private readonly riotService: RiotService
   ) {}
 
-  async renderArticlesPage(lang) {
+  async renderMainPage(lang) {
     const articles = await this.articlesService.findAll({
       relations: ["title", "headerTitle", "headerSubtitle", "champion", "champion.name"],
       take: 3
@@ -28,6 +28,28 @@ export class HtmlService {
       description: {
         en: "Unlock Victory with League of Legends Guides! Discover Strategies, Champion Tips, and Winning Tactics on LoLGuides. Dominate and Climb the Ranks with our Comprehensive Resources",
         ru: "Достигните победы с гайдами по Лиге Легенд! Откройте для себя стратегии, советы по чемпионам и выигрышные тактики на LoLGuides. Доминируйте и поднимайтесь в рейтинге с нашими всесторонними ресурсами"
+      },
+      i18n, articles, lang
+    };
+  }
+
+  async renderGuidesPage(lang) {
+    const articles = await this.articlesService.findAll({
+      relations: ["title", "headerTitle", "headerSubtitle", "champion", "champion.name"],
+      order: {champion: {name: {[lang]: "ASC"}}}
+    })
+    return { 
+      url: this.config.get("URL"), 
+      title: {en: "All guides", ru: "Все гайды"}, 
+      metaTitle: {en: "All guides | LoLGuides", ru: "Все гайды | LoLGuides"},
+      // description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")}, 
+      description: {
+        en: "All guides: Ahri, Sylas, Miss Fortune. Other guides are in development",
+        ru: "Все гайды: Ари, Сайлас, Мисс Фортуна. Остальные гайды находятся в разработке"
+      },
+      inDevelopment: {
+        en: "Other guides are in development",
+        ru: "Остальные гайды находятся в разработке"
       },
       i18n, articles, lang
     };
