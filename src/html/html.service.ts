@@ -47,10 +47,6 @@ export class HtmlService {
         en: "All guides: Ahri, Sylas, Miss Fortune. Other guides are in development",
         ru: "Все гайды: Ари, Сайлас, Мисс Фортуна. Остальные гайды находятся в разработке"
       },
-      inDevelopment: {
-        en: "Other guides are in development",
-        ru: "Остальные гайды находятся в разработке"
-      },
       i18n, articles, lang
     };
   }

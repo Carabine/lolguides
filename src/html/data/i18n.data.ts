@@ -34,7 +34,17 @@ export const i18n = {
     bannerButton: {
       en: `Search for guides`,
       ru: `Искать гайды`
+    },
+    allGuides: {
+      en: "ALL GUIDES",
+      ru: "ВСЕ ГАЙДЫ"
     }
+  },
+  guidesPage: {
+    inDevelopment: {
+      en: "Other guides are in development",
+      ru: "Остальные гайды находятся в разработке"
+    },
   }
  
 }
