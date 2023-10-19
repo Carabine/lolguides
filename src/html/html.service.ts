@@ -17,14 +17,15 @@ export class HtmlService {
 
   async renderMainPage(lang) {
     const articles = await this.articlesService.findAll({
+      where: {isPublished: true},
       relations: ["title", "headerTitle", "headerSubtitle", "champion", "champion.name"],
       take: 3
     })
-    return { 
-      url: this.config.get("URL"), 
-      title: {en: "Recent guides", ru: "Последние гайды"}, 
+    return {
+      url: this.config.get("URL"),
+      title: {en: "Recent guides", ru: "Последние гайды"},
       metaTitle: {en: "League of Legends guides: builds, runes, items, strategies", ru: "Гайды по League of Legends: сборки, руны, предметы, стратегии"},
-      // description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")}, 
+      // description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")},
       description: {
         en: "Unlock Victory with League of Legends Guides! Discover Strategies, Champion Tips, and Winning Tactics on LoLGuides. Dominate and Climb the Ranks with our Comprehensive Resources",
         ru: "Достигните победы с гайдами по Лиге Легенд! Откройте для себя стратегии, советы по чемпионам и выигрышные тактики на LoLGuides. Доминируйте и поднимайтесь в рейтинге с нашими всесторонними ресурсами"
@@ -35,14 +36,15 @@ export class HtmlService {
 
   async renderGuidesPage(lang) {
     const articles = await this.articlesService.findAll({
+      where: {isPublished: true},
       relations: ["title", "headerTitle", "headerSubtitle", "champion", "champion.name"],
       order: {champion: {name: {[lang]: "ASC"}}}
     })
-    return { 
-      url: this.config.get("URL"), 
-      title: {en: "All guides", ru: "Все гайды"}, 
+    return {
+      url: this.config.get("URL"),
+      title: {en: "All guides", ru: "Все гайды"},
       metaTitle: {en: "All guides | LoLGuides", ru: "Все гайды | LoLGuides"},
-      // description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")}, 
+      // description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")},
       description: {
         en: "All guides: Ahri, Sylas, Miss Fortune. Other guides are in development",
         ru: "Все гайды: Ари, Сайлас, Мисс Фортуна. Остальные гайды находятся в разработке"
@@ -70,10 +72,10 @@ export class HtmlService {
             const itemIds = block.value.replace(/\s/g, "").split(",")
             const items = await this.riotService.find({where: itemIds.map(itemId => ({id: itemId})), relations: ["name", "description"]})
             const sortedItems = itemIds.map(itemId => items.find((item) => item.id === itemId)).filter(item => item)
-  
+
             blocks.push(this.getItemsBlock(block.text, sortedItems, lang))
           }
-          
+
         } else if(block.type === BlockType.Abilities) {
           const parsedValue = block.value.replace(/\s/g, "").split(";")
           const skillsOrderData = parsedValue.map(value => ({id: value.split(":")[0], order: value.split(":")[1].split("/").map(orderItem => Number(orderItem)), data: {}}))
@@ -133,15 +135,15 @@ export class HtmlService {
             relations: ["name", "description"]
           })
 
-          
+
           if(item) {
             blocks.push(this.getItemTitleBlock(item, lang, item.type !== RiotEntityType.Champion))
-          }         
+          }
         } else if(block.type === BlockType.Text) {
           const matchesEn = block.text.en.match(/\[.*?\]/g)?.map(x => x.replace(/[\[\]]/g, "")) ?? []
           const matchesRu = block.text.ru.match(/\[.*?\]/g)?.map(x => x.replace(/[\[\]]/g, "")) ?? []
 
-        
+
           const names = []
 
           const matches = [...matchesEn, ...matchesRu]
@@ -153,7 +155,7 @@ export class HtmlService {
             })
             .filter((value, index, self) => {
               return self.indexOf(value) === index;
-            })      
+            })
 
           const data = matches.length ?
             await this.riotService.find({
@@ -169,7 +171,7 @@ export class HtmlService {
           if(block) {
             blocks.push(this.getTextBlock(block.text, lang, data))
           }
-          
+
         } else if(block.type === BlockType.ProsCons) {
           const pros = {ru: block.text.ru.split(";")[0].split("/"), en: block.text.en.split(";")[0].split("/")}
           const cons = {ru: block.text.ru.split(";")[1].split("/"), en: block.text.en.split(";")[1].split("/")}
