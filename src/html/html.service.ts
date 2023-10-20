@@ -43,7 +43,7 @@ export class HtmlService {
     return {
       url: this.config.get("URL"),
       title: {en: "All guides", ru: "Все гайды"},
-      metaTitle: {en: "All guides | LoLGuides", ru: "Все гайды | LoLGuides"},
+      metaTitle: {en: "All guides - LoLGuides", ru: "Все гайды - LoLGuides"},
       // description: {en: articles.map(a => a.champion.name["en"]).join(" · "), ru: articles.map(a => a.champion.name["ru"]).join(" · ")},
       description: {
         en: "All guides: Ahri, Sylas, Miss Fortune. Other guides are in development",
