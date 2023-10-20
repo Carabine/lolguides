@@ -33,7 +33,7 @@ html,body {
     height: 60px;
     width: 100%;
     z-index: 10;
-    
+
 }
 
 .header {
@@ -115,7 +115,6 @@ html,body {
 @media screen and (max-width: 800px) {
     .search-container {
         justify-content: flex-start;
-        
     }
     .search-input-wrapper {
         margin-right: 0;
@@ -156,12 +155,6 @@ html,body {
     }
 }
 
-@media screen and (max-width: 500px) {
-    
-
-    
-}
-
 @media screen and (max-width: 420px) {
     .search-input-wrapper {
         width: 80%;
@@ -172,7 +165,7 @@ html,body {
     /* .search-container {
         width: 40%;
     } */
-    
+
 }
 
 .search-popup {
@@ -196,7 +189,7 @@ html,body {
     cursor: pointer;
     text-decoration: none;
     color: white;
-    
+
 }
 
 .search-popup .search-item:hover {
@@ -213,7 +206,7 @@ html,body {
         width: 150%;
         right: -25%;
     }
-    
+
 }
 
 @media screen and (max-width: 420px) {
@@ -221,7 +214,7 @@ html,body {
         width: 85vw;
         right: 0px;
     }
-    
+
 }
 
 .content-wrapper {
@@ -251,7 +244,7 @@ html,body {
     width: 300px;
     flex-shrink: 0;
     padding-left: 24px;
-    
+
 }
 
 .sidebar-navigation {
@@ -335,14 +328,17 @@ html,body {
 
 .section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
     padding: 24px 0 0;
     color: #E0E0E0;
     line-height: 20px;
+    gap: 0px 26px;
 }
 
 .section-title {
+    width: 100%;
     font-size: 25px;
     font-weight: 500;
     margin: 6px 0 10px;
@@ -546,7 +542,7 @@ html,body {
     flex-wrap: wrap;
     align-items: flex-start;
     margin: 10px 0px 4px;
-    padding: 10px 0 6px 6px
+    padding: 10px 0 6px 6px;
 }
 
 .items-block .items-title {
@@ -572,8 +568,10 @@ html,body {
 }
 
 .items-title ~ .items-container{
+    min-width: 180px;
     border-radius: 0px 5px 5px 5px;
     padding: 14px;
+    min-height: 118px;
 }
 
 
@@ -614,12 +612,13 @@ html,body {
 
     .items-title ~ .items-container{
         padding: 10px 14px;
+        min-height: auto;
     }
 
     .items-block .item {
         width: 50px;
     }
-    
+
     .items-block img {
         height: 50px;
     }
@@ -727,7 +726,7 @@ html,body {
     flex-grow: 1;
     background: #323232;
     padding: 18px;
-    border-radius: 5px;   
+    border-radius: 5px;
 }
 
 .pros-block {
@@ -910,7 +909,7 @@ html,body {
 
     .content-header-title h2 {
         font-size: 17px;
-    }    
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -962,7 +961,7 @@ html,body {
         width: 16px;
         height: 16px;
     }
-    
+
 }
 
 @media screen and (max-width: 450px) {
@@ -972,7 +971,7 @@ html,body {
 
     .content-header-title h2 {
         font-size: 16px;
-    }    
+    }
 }
 
 @media screen and (max-width: 350px) {
@@ -1050,7 +1049,7 @@ html,body {
     .main-page .first-section .section-block-text {
         width: 85%;
     }
-    
+
 }
 
 @media screen and (max-width: 550px) {
@@ -1060,7 +1059,7 @@ html,body {
     .main-page .section-block{
         font-size: 13px;
         line-height: 18px;
-    }  
+    }
     .main-page .first-section {
         margin: calc(16px + 12px) auto 14px
     }
@@ -1281,7 +1280,7 @@ html,body {
     .banner .banner-left {
         width: 80%;
         text-align: center;
-        
+
     }
 }
 
@@ -1369,7 +1368,7 @@ html,body {
     align-items: center;
     gap: 12px;
 }
-  
+
 .footer-right select {
     background-color: #323232;
     color: white;
@@ -1397,7 +1396,7 @@ html,body {
 .socials .social-item {
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
     height: 32px;
     width: 32px;
     transition: 0.2s;
@@ -1480,19 +1479,19 @@ html,body {
         gap: 12px 22px;
         padding: 20px 0px 4px;
     }
-    
+
     .champions-container .champion-item {
         width: 54px;
         gap: 8px;
     }
-    
+
     .champion-item img {
         height: 54px;
     }
     .champion-item .champion-description {
         font-size: 10px;
     }
-    
+
 }
 
 .display-none {
