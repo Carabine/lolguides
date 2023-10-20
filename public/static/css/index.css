@@ -1000,6 +1000,7 @@ html,body {
     position: relative;
     margin: calc(16px + 12px) auto 32px;
     padding: 0;
+    justify-content: center;
 }
 
 .main-page .first-section .section-block-text {
