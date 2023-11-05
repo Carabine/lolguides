@@ -5,7 +5,7 @@ export const i18n = {
   },
   mainPage: {
     title: {
-      en: "Welcome to the LoLGuides",
+      en: "Welcome to LoLGuides",
       ru: "Добро пожаловать в LoLGuides"
     },
     blockText: {
